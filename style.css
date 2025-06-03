@@ -1,0 +1,178 @@
+/* Fond général et police */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Titre principal centré sous la photo */
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2em;
+  }
+  
+  /* Navigation dans un coin */
+  header {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+  }
+
+  nav a {
+    background-color: #e0c36e;   /* jaune sobre */
+    color: #1e1e1e;              /* texte sombre pour le contraste */
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  nav a:hover {
+    background-color: #f0d77c;  /* jaune un peu plus clair au survol */
+    transform: scale(1.05);     /* petit zoom au survol */
+  }
+  
+  
+  /* Section principale centrée */
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  main img {
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .imgMain{
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 70px;
+  }
+  main p {
+    margin: 5px 0;
+    text-align: center;
+  }
+  
+  /* Footer en ligne et bien lisible */
+  footer {
+    background-color: #2a2a2a;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+  }
+  footer a {
+    color: #5fdde5; /* bleu-vert clair sur fond sombre */
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  footer a:hover {
+    color: #aff6ff; /* encore plus clair au survol */
+    text-decoration: underline;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  footer a {
+    color: #5fdde5;
+    font-weight: 500;
+    position: relative;
+  }
+  footer a::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #aff6ff;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+  }
+  footer a:hover::after {
+    width: 100%;
+  }
+  
+  
+  footer p {
+    margin: 5px 0;
+  }
+  
+
+  .competences {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+    gap: 20px;
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  
+  .competences div {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    width: 250px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+  .competences div:hover {
+    transform: scale(1.03);
+    background-color: #3a3a3a;
+  }
+  
+  .competences img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  /* Modale */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal > div {
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    color: #f0f0f0;
+    position: relative;
+    text-align: center;
+  }
+  
+  .modal .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  

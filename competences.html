@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio</title>    
+    <meta name="description" content="Portfolio">
+    <meta name="keywords" content="Portfolio">
+</head>
+
+<body>
+    <h1> Mon Portfolio</h1>
+    <header>
+        <nav>            
+            <a href="./index.html">Accueil</a>
+            <a href="./competences.html">Compétences</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Evan Le Garrec</h2>
+        <img src="img/photoCV.png" width="300" height="300" class="imgMain">
+
+        <section class="competences">
+            <div data-modal="modal1">
+              <img src="img/SAE101.png" alt="Image Compétence 1">
+              <p>Compétence 1 - Réaliser un développement d'applications informatiques</p>
+            </div>
+            <div data-modal="modal2">
+              <img src="img/SAE102.png" alt="Image Compétence 2">
+              <p>Compétence 2 - Optimiser des applications informatiques</p>
+            </div>
+            <div data-modal="modal3">
+              <img src="img/SAE103.png" alt="Image Compétence 3">
+              <p>Compétence 3 - Administrer des systèmes informatiques communicants complexes</p>
+            </div>
+            <div data-modal="modal4">
+              <img src="img/SAE104.jpg" alt="Image Compétence 4">
+              <p>Compétence 4 - Gérer des données de l'information</p>
+            </div>
+            <div data-modal="modal5">
+              <img src="img/SAE105.png" alt="Image Compétence 5">
+              <p>Compétence 5 - Conduite de projet</p>
+            </div>
+            <div data-modal="modal6">
+              <img src="img/SAE106.png" alt="Image Compétence 6">
+              <p>Compétence 6 - Travailler dans une équipe informatique</p>
+            </div>
+          </section>
+          
+    </main>
+    <footer>
+        <address>
+            <p>Mon mail : <a href="mailto:evan.legarrec56@gmail.com">evan.legarrec56@gmail.com</a></p>
+            <p>Mon profil LinkedIn : <a href="https://www.linkedin.com/in/evan-le-garrec-a52956346/">LinkedIn</a></p>
+            <p>Lien de l'IUT de Lannion : <a href="https://iut-lannion.univ-rennes.fr/">IUT de Lannion</a></p>
+            <p>Lien vers mon CV : <a href="CV_Evan.pdf" download="CV_Evan_Le_Garrec.pdf">Télécharger mon CV</a></p>
+            <p>Lien vers le programme du BUT Informatique : <a href="https://www.enseignementsup-recherche.gouv.fr/sites/default/files/annexe-2-licence-professionnelle-bachelor-universitaire-de-technologie-informatique-29016.pdf">Programme du BUT</a></p>
+        </address>
+    </footer>
+
+    <div class="modal" id="modal1"><div><span class="close">&times;</span>
+        <img src="img/SAE101.png" alt="Image C1">
+        <p>Ce projet consistait à recréer un jeu de snake en C sans intérface graphique.</p>
+        <p>J'était seul pour ce projet et je tenais également un cahier de tests.</p>
+    </div></div>
+
+    <div class="modal" id="modal2"><div><span class="close">&times;</span>
+        <img src="img/SAE102.png" alt="Image C2">
+        <p>Ce projet était la suite du projet 1. Il reprenait les bases du snake.</p>
+        <p>Par la suite, j'ai automatiser et optimiser le serpent, le tout, en binôme.</p>
+    </div></div>
+
+    <div class="modal" id="modal3"><div><span class="close">&times;</span>
+        <img src="img/SAE103.png" alt="Image C3" >
+        <p>Ce projet consistait à normaliser des fichiers dans un format demandé par un client grâce à Docker.</p>
+        <p>Pour continuer ce projet, j'ai eu l'occasion de faire du scripting pour automatiser la normalisation des fichiers.</p>
+        <p>Pour la réalisation de ce projet, j'étais dans une équipe de 4 personnes.</p>
+    </div></div>
+
+    <div class="modal" id="modal4"><div><span class="close">&times;</span>
+        <img src="img/SAE104.jpg" alt="Image C4", width="300", height="150">
+        <p>Ce projet consistait à créer une base de donnée sur la Ligue 1 de football en Tutorial D.</p>
+        <p>Pour commencer, j'ai fait un diagramme UML puis un graphe d'intégrité référentielle et enfin, les scripts de création de la base de données.</p>
+        <p>Ce projet se passait en binôme.</p>
+    </div></div>
+
+    <div class="modal" id="modal5"><div><span class="close">&times;</span>
+        <img src="img/SAE105.png" alt="Image C5" width="300">
+        <p>Le cinquième projet était un projet web portant sur les jeux olympiques de Paris 2024. Tout d'abord, j'ai analysé les besoins du client avant de réaliser l'arborescence du site puis réaliser les pages web.</p>
+        <p>Ce projet était réalisé en équipe de 4 personnes.</p>
+    </div></div>
+
+    <div class="modal" id="modal6"><div><span class="close">&times;</span>
+        <img src="img/SAE106.png" alt="Image C6" width="300", height="150">
+        <p>Ce projet-ci avait pour objectif d'apprendre à faire des recherchers sur une entreprise. Nous avons choisi la société TotalEnergies.</p>
+        <p>Ce projet était réalisé en équipe de 4 personnes.</p>
+    </div></div>
+
+    <script>
+        document.querySelectorAll('.competences div').forEach(card => {
+          card.addEventListener('click', () => {
+            const modalId = card.getAttribute('data-modal');
+            document.getElementById(modalId).style.display = 'flex';
+          });
+        });
+      
+        document.querySelectorAll('.modal .close').forEach(btn => {
+          btn.addEventListener('click', () => {
+            btn.closest('.modal').style.display = 'none';
+          });
+        });
+      
+        window.addEventListener('click', (e) => {
+          if (e.target.classList.contains('modal')) {
+            e.target.style.display = 'none';
+          }
+        });
+      </script>
+      
+</body>
+
+
+</html>
